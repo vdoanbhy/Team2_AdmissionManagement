@@ -6,11 +6,11 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
 using System.Net;
-using EFSecurityShell.Models;
+using Team2_AdmissionManagement.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 
-namespace EFSecurityShell.Controllers
+namespace Team2_AdmissionManagement.Controllers
 {
     
     public class RolesAdminController : Controller

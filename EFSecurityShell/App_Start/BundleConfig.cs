@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace EFSecurityShell
+namespace Team2_AdmissionManagement
 {
     public class BundleConfig
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace EFSecurityShell.Controllers
+namespace Team2_AdmissionManagement.Controllers
 {
     public class HomeController : Controller
     {

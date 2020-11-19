@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using EFSecurityShell.Models;
+using Team2_AdmissionManagement.Models;
 
-namespace EFSecurityShell.Controllers
+namespace Team2_AdmissionManagement.Controllers
 {
     [Authorize]
     public class AccountController : Controller

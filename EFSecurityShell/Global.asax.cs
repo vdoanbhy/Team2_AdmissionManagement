@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace EFSecurityShell
+namespace Team2_AdmissionManagement
 {
     public class MvcApplication : System.Web.HttpApplication
     {

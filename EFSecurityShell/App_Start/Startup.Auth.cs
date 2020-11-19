@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using EFSecurityShell.Models;
+using Team2_AdmissionManagement.Models;
 
-namespace EFSecurityShell
+namespace Team2_AdmissionManagement
 {
     public partial class Startup
     {

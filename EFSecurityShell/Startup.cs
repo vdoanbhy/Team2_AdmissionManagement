@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(EFSecurityShell.Startup))]
-namespace EFSecurityShell
+[assembly: OwinStartupAttribute(typeof(Team2_AdmissionManagement.Startup))]
+namespace Team2_AdmissionManagement
 {
     public partial class Startup
     {

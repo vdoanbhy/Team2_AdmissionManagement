@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using EFSecurityShell.Models;
+using Team2_AdmissionManagement.Models;
 
-namespace EFSecurityShell.Models
+namespace Team2_AdmissionManagement.Models
 {
     public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
@@ -28,8 +28,8 @@ namespace EFSecurityShell.Models
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
 
 
-            AddTestAccount(userManager, roleManager, "password", "admin@efshell.com", "Admin");
-            AddTestAccount(userManager, roleManager, "password", "user@efshell.com", "User");
+            AddTestAccount(userManager, roleManager, "password", "admin@gmu.com", "Admin");
+            AddTestAccount(userManager, roleManager, "password", "user@gmu.com", "User");
         }
 
         private static void AddTestAccount(ApplicationUserManager userManager, ApplicationRoleManager roleManager, string password, string username, string rolename)

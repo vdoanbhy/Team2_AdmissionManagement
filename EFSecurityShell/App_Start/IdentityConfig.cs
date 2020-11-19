@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using EFSecurityShell.Models;
+using Team2_AdmissionManagement.Models;
 
-namespace EFSecurityShell
+namespace Team2_AdmissionManagement
 {
     public class EmailService : IIdentityMessageService
     {
