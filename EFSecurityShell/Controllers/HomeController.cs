@@ -12,13 +12,5 @@ namespace Team2_AdmissionManagement.Controllers
         {
             return View();
         }
-
-        [Authorize]
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
     }
 }

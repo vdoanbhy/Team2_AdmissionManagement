@@ -38,7 +38,8 @@ textarea {
 }
 .navbar a{
     color:white;
-    font-size: large;
+    font-size: x-large;
+    margin-top: 1.2em;
 }
 .navbar a:visited{
     color:white;
@@ -62,22 +63,31 @@ navbar-brand a:hover{
 }
 /*Body*/
 
-
-
-
-
-
-
-
-/*Footer*/
-footer{
-    padding-top: 20px;
-    bottom:0;
-    width: 100%;
-    min-height:200px;
-    background-color: black;
-    color:white;
+#attention-section{
+    margin-bottom: 3em;
+    margin-top:5em;
+    text-align:center;
 }
+#call-to-action {
+    background-color: #ffcc33;
+    color: #006633;
+    width: 15em;
+}
+#call-to-action a, a:visited, :active:hover {
+    color: #006633;
+    font-size:large;
+}
+
+
+    /*Footer*/
+    footer {
+        padding-top: 20px;
+        bottom: 0;
+        width: 100%;
+        min-height: 200px;
+        background-color: black;
+        color: white;
+    }
 .footer,
 .push {
     height: 50px;
