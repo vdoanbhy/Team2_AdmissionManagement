@@ -2,26 +2,41 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>George Mason Univeristy</h1>
-    <p class="lead">This website will be used by the Admissions department to keep track of prospective students applying to the university.  Below is a high-level list of requirements that your website should include as part of the design and implementation. </p>
-    <p>
-        The identity database is seeded with two accounts and two roles to begin with:
-        <ul>
-            <li>Admin Role Login=admin@gmu.com, Password=password</li>
-            <li>Staff Role Login=staff@gmu.com, Password=password</li>
-            <li>User Role Login=user@gmu.com, Password=password</li>
-        </ul>
-    </p>
-    
+<div>
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/eSU3xC9YDa4?controls=0&mute=1&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="row container">
+    <div class="col-md-6">
+        <button class="btn btn-default">
+            @Html.ActionLink("Applicants", "Index", "Applicants")
+        </button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-default">
+            <a href="https://www.youvisit.com/tour/gmu?loc=trail1%3A0%3A1%3A1&pl=v&masonSource=admissionsLandingPage">Take a Virtual Tour</a>
+        </button>
+    </div>
 </div>
 
+<p>
+    OTHER INFO: The identity database is seeded with two accounts and two roles to begin with:
+    <ul>
+        <li>Admin Role Login=admin@gmu.com, Password=password</li>
+        <li>Staff Role Login=staff@gmu.com, Password=password</li>
+        <li>User Role Login=user@gmu.com, Password=password</li>
+    </ul>
+</p>
 <div class="row">
-    <div class="col-md-12">
-        <h2>Lorem ipsum</h2>
+    <div class="col-md-6">
+        <h2>Why Mason?</h2>
         <p>
-            Lorem ipsum dolor sit amet, volutpat prodesset est in, vix officiis splendide interesset id. His perfecto sensibus cu, duo cu suavitate intellegebat. Ius munere admodum noluisse ne, cu prodesset persecuti definiebas mel. Pro agam elit eu. Animal consequuntur est no, et enim honestatis neglegentur eos.
+            A college degree is one of the most valuable investments you can make and Mason is consistently recognized for providing a quality education at an affordable price. This past year alone, Kiplinger's Personal Finance magazine ranked Mason as one of the Top 100 Best Values in Public College on its national list, and Forbes magazine and the Center for College Affordability and Productivity ranked Mason number 68 among the Top 100 of “America’s Best College Buys.”
+
+            At Mason students gain unparalleled academic and career advantages. Virginia’s State Council of Higher Education placed Mason at the top of the list of Virginia schools for highest average starting salary of its graduates, making Mason a smart investment.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div  class="col-md-6">
+        <h2>Our Location</h2>
+        <p>Mason’s prime location in Fairfax, Virginia, just 15 miles outside of Washington, D.C., gives you the best of both worlds. You’ll enjoy all the benefits of living near the nation’s capital, while also feeling safe and right at home at one of the largest and most beautiful residential campuses in Virginia. The city becomes your playground—you can intern with National Geographic or the Justice Department, visit museum exhibits with your Art History classmates, explore historic Georgetown and the National Mall, catch a Nationals baseball game, and even attend congressional hearings.</p>
     </div>
 </div>
