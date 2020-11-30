@@ -16,6 +16,7 @@ namespace Team2_AdmissionManagement.Controllers
         private Team2_AdmissionManagementContext db = new Team2_AdmissionManagementContext();
 
         // GET: Interests
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Index()
         {
             return View(db.Interests.ToList());
