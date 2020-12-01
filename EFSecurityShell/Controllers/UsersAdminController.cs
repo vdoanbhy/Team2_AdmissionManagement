@@ -54,6 +54,7 @@ namespace Team2_AdmissionManagement.Controllers
 
 
         // GET: UsersAdmin
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Index()
         {
             return View(await UserManager.Users.ToListAsync());
@@ -66,6 +67,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: UsersAdmin/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
