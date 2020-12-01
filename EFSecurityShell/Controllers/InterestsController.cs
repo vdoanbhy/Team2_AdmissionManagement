@@ -16,13 +16,13 @@ namespace Team2_AdmissionManagement.Controllers
         private Team2_AdmissionManagementContext db = new Team2_AdmissionManagementContext();
 
         // GET: Interests
-        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Index()
         {
             return View(db.Interests.ToList());
         }
 
         // GET: Interests/Details/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +38,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Interests/Create
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Create()
         {
             return View();
@@ -61,6 +62,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Interests/Edit/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +82,7 @@ namespace Team2_AdmissionManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Edit([Bind(Include = "ID,Major,Terms,Year")] Interest interest)
         {
             if (ModelState.IsValid)
@@ -92,6 +95,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Interests/Delete/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

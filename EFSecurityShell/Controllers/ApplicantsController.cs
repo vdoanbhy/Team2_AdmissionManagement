@@ -16,7 +16,7 @@ namespace Team2_AdmissionManagement.Controllers
         private Team2_AdmissionManagementContext db = new Team2_AdmissionManagementContext();
 
         // GET: Applicants
-        [Authorize(Roles = "Admin, Staff, User")]
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Index()
         {
             var applicants = db.Applicants.Include(a => a.Interest);
@@ -24,6 +24,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Applicants/Details/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Details(int? id)
         {
             if (id == null)

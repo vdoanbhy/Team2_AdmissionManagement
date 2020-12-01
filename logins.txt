@@ -1,0 +1,3 @@
+Admin Role Login=admin@gmu.com, Password=password
+Staff Role Login=staff@gmu.com, Password=password
+User Role Login=user@gmu.com, Password=password
