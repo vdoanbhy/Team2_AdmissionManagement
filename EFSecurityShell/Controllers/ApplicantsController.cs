@@ -16,6 +16,7 @@ namespace Team2_AdmissionManagement.Controllers
         private Team2_AdmissionManagementContext db = new Team2_AdmissionManagementContext();
 
         // GET: Applicants
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Index()
         {
             var applicants = db.Applicants.Include(a => a.Interest);
@@ -23,6 +24,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Applicants/Details/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -51,7 +53,7 @@ namespace Team2_AdmissionManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,SSN,LastName,MiddleName,FirstName,Gender,DoB,Street,City,State,Zip,HomePhone,CellPhone,InstitutionName,InstitutionCity,GraduationDate,GPA,MathSAT,VerbalSAT,InterestID,SubmissionDate")] Applicant applicant)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //PUT VALIDATIONS HERE
             {
                 db.Applicants.Add(applicant);
                 db.SaveChanges();
@@ -63,6 +65,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Applicants/Edit/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -96,6 +99,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Applicants/Delete/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

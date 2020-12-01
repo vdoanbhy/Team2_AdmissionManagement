@@ -54,6 +54,7 @@ namespace Team2_AdmissionManagement.Controllers
 
 
         // GET: RolesAdmin
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(RoleManager.Roles);
@@ -85,6 +86,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: RolesAdmin/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();

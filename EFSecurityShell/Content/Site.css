@@ -1,14 +1,19 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    height: 100%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top:51px;
+    min-height:100%;
 }
-
+.white{
+    color:white;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -21,4 +26,69 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+/* Navigation*/
+.navbar{
+    min-height: 80px;
+    background-color: #006633;
+
+}
+.navbar-toggle{
+    color:white;
+}
+.navbar a{
+    color:white;
+    font-size: x-large;
+    margin-top: 1.2em;
+}
+.navbar a:visited{
+    color:white;
+}
+.navbar a:hover {
+   color: #006633;
+}
+navbar-brand a:hover{
+    color: white;
+    background-color: blue;
+}
+.dropdown-menu li a {
+    color: #006633;
+}
+.dropdown-menu li a:visited{
+    color: #006633;
+}
+.dropdown-menu li a:hover {
+    color: #006633;
+    background-color: lightgray;
+}
+/*Body*/
+
+#attention-section{
+    margin-bottom: 3em;
+    margin-top:5em;
+    text-align:center;
+}
+#call-to-action {
+    background-color: #ffcc33;
+    color: #006633;
+    width: 15em;
+}
+#call-to-action a, a:visited, :active:hover {
+    color: #006633;
+    font-size:large;
+}
+
+
+    /*Footer*/
+    footer {
+        padding-top: 20px;
+        bottom: 0;
+        width: 100%;
+        min-height: 200px;
+        background-color: black;
+        color: white;
+    }
+.footer,
+.push {
+    height: 50px;
 }

@@ -16,6 +16,7 @@ namespace Team2_AdmissionManagement.Controllers
         private Team2_AdmissionManagementContext db = new Team2_AdmissionManagementContext();
 
         // GET: Reviews
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Index()
         {
             var reviews = db.Reviews.Include(r => r.Applicant);
@@ -23,6 +24,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Reviews/Details/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Reviews/Create
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Create()
         {
             ViewBag.ApplicantID = new SelectList(db.Applicants, "ID", "SSN");
@@ -63,6 +66,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Reviews/Edit/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -96,6 +100,7 @@ namespace Team2_AdmissionManagement.Controllers
         }
 
         // GET: Reviews/Delete/5
+        [Authorize(Roles = "Admin, Staff")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

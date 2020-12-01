@@ -21,7 +21,6 @@ namespace Team2_AdmissionManagement.Models
     public class Applicant
     {
         public int ID { get; set; }
-        [Required]
         [RegularExpression(@"^\d{3}-\d{2}-\d{4}$", ErrorMessage = "Not a valid SSN")]
         public string SSN { get; set; }
         [Required]
@@ -41,34 +40,32 @@ namespace Team2_AdmissionManagement.Models
         public string City { get; set; }
         public State? State { get; set; }
         public int Zip { get; set; }
-        [Required(ErrorMessage = "You must provide a phone number")]
+        [Required(ErrorMessage = "You must provide a phone number.")]
         [Display(Name = "Home Phone")]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number.")]
         public string HomePhone { get; set; }
-        [Required(ErrorMessage = "You must provide a phone number")]
+        [Required(ErrorMessage = "You must provide a phone number.")]
         [Display(Name = "Cell Phone")]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number.")]
         public string CellPhone { get; set; }
-        [Display(Name = "HS Name")]
+        [Display(Name = "High School's Name")]
         public string InstitutionName { get; set; }
-        [Display(Name = "HS City")]
+        [Display(Name = "High School's City")]
         public string InstitutionCity { get; set; }
         [Required]
         [Display(Name = "Graduation Date")]
         [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime GraduationDate { get; set; }
         [Required]
-        [Range(3.0, 4.0, ErrorMessage = "Do not meet the minimum qualifications")]
+        [Range(3.0, 4.0, ErrorMessage = "You do not meet the minimum qualifications.")]
         public decimal GPA { get; set; }
         [Required]
         [Range(200, 800, ErrorMessage = "Do not meet the minimum qualifications")]
-        [Display(Name = "Math SAT")]
         public int MathSAT { get; set; }
         [Required]
         [Range(200, 800, ErrorMessage = "Do not meet the minimum qualifications")]
-        [Display(Name = "Verbal SAT")]
         public int VerbalSAT { get; set; }
         [Display(Name = "Major of Interest")]
         public int? InterestID { get; set; }
