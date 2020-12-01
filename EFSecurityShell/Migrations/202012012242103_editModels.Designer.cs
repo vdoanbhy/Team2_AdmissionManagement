@@ -13,7 +13,7 @@ namespace Team2_AdmissionManagement.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202012012234432_editModels"; }
+            get { return "202012012242103_editModels"; }
         }
         
         string IMigrationMetadata.Source

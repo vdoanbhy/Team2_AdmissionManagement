@@ -198,9 +198,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012012234432_editModels.cs" />
-    <Compile Include="Migrations\202012012234432_editModels.Designer.cs">
-      <DependentUpon>202012012234432_editModels.cs</DependentUpon>
+    <Compile Include="Migrations\202012012242103_editModels.cs" />
+    <Compile Include="Migrations\202012012242103_editModels.Designer.cs">
+      <DependentUpon>202012012242103_editModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -317,8 +317,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012012234432_editModels.resx">
-      <DependentUpon>202012012234432_editModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012012242103_editModels.resx">
+      <DependentUpon>202012012242103_editModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

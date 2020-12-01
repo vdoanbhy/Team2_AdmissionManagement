@@ -15,7 +15,7 @@ namespace Team2_AdmissionManagement.Migrations
                         SSN = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         MiddleName = c.String(nullable: false),
-                        FirstName = c.String(),
+                        FirstName = c.String(nullable: false),
                         Gender = c.Int(),
                         DoB = c.DateTime(nullable: false),
                         Street = c.String(),
