@@ -22,7 +22,8 @@ namespace Team2_AdmissionManagement.Models
     {
         public int ID { get; set; }
         [Required]
-        [RegularExpression(@"^\d{3}-\d{2}-\d{4}$", ErrorMessage = "Not a valid SSN")]
+        [RegularExpression(@"^\d{3}-\d{2}-\d{4}$", ErrorMessage = "Not a valid SSN.")]
+        [Display(Name = "Social Security Number")]
         public string SSN { get; set; }
         [Required]
         [Display(Name = "Last Name")]
@@ -38,9 +39,14 @@ namespace Team2_AdmissionManagement.Models
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DoB { get; set; }
+        [Required]
         public string Street { get; set; }
+        [Required]
         public string City { get; set; }
+        [Required]
         public State? State { get; set; }
+        [Required]
+        [Display(Name = "Zip Code")]
         public int Zip { get; set; }
         [Required(ErrorMessage = "You must provide a phone number.")]
         [Display(Name = "Home Phone")]
@@ -64,16 +70,16 @@ namespace Team2_AdmissionManagement.Models
         [Range(3.0, 4.0, ErrorMessage = "You do not meet the minimum qualifications.")]
         public decimal GPA { get; set; }
         [Required]
-        [Range(200, 800, ErrorMessage = "Do not meet the minimum qualifications")]
-        [Display(Name = "Math SAT")]
+        [Range(200, 800, ErrorMessage = "You do not meet the minimum qualifications.")]
+        [Display(Name = "Math SAT Score")]
         public int MathSAT { get; set; }
         [Required]
-        [Range(200, 800, ErrorMessage = "Do not meet the minimum qualifications")]
-        [Display(Name = "Verbal SAT")]
+        [Range(200, 800, ErrorMessage = "You do not meet the minimum qualifications.")]
+        [Display(Name = "Verbal SAT Score")]
         public int VerbalSAT { get; set; }
         [Display(Name = "Major of Interest")]
         public int? InterestID { get; set; }
-        
+        [Display(Name = "Major of Interest")]
         public virtual Interest Interest { get; set; }
         [Required]
         [Display(Name = "Submission Date")]
