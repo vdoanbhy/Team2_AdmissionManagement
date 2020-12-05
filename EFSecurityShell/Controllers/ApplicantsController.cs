@@ -53,28 +53,29 @@ namespace Team2_AdmissionManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,SSN,LastName,MiddleName,FirstName,Gender,DoB,Street,City,State,Zip,HomePhone,CellPhone,InstitutionName,InstitutionCity,GraduationDate,GPA,MathSAT,VerbalSAT,InterestID,SubmissionDate")] Applicant applicant)
         {
-            IEnumerable<Applicant> applicants = new List<Applicant>();
-            String[] SSNs = applicants.Select(l => l.SSN).ToArray();
-            string appSSN = applicant.SSN;
-
-            for(int x = 0; x < SSNs.Length; x++)
-            {
-                string currentSSN = SSNs[x];
-                if(appSSN == currentSSN)
-                {
-                    ModelState.AddModelError("SSN", "This SSN has already been entered.");
-                    x = 999999;
-                }
-            }
+            ViewBag.InterestID = new SelectList(db.Interests, "ID", "Major", applicant.InterestID);
 
             if (ModelState.IsValid)
             {
+                Applicant matchingApplicant = db.Applicants.Where(cm => string.Compare(cm.SSN, applicant.SSN, true) == 0).FirstOrDefault();
+
+                if (applicant == null)
+                {
+                    return HttpNotFound();
+                }
+
+                if (matchingApplicant != null)
+                {
+                    ModelState.AddModelError("SSN", "This SSN was already entered.");
+                    return View(applicant);
+                }
+
                 db.Applicants.Add(applicant);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.InterestID = new SelectList(db.Interests, "ID", "Major", applicant.InterestID);
+            
             return View(applicant);
         }
 
