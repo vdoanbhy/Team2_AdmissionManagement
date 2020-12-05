@@ -73,7 +73,6 @@ namespace Team2_AdmissionManagement.Models
         public int VerbalSAT { get; set; }
         [Display(Name = "Major of Interest")]
         public int? InterestID { get; set; }
-        
         public virtual Interest Interest { get; set; }
         [Required]
         [Display(Name = "Submission Date")]
