@@ -9,6 +9,15 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div id="searchSSN">
+    @using (Html.BeginForm("Index", "Applicants", FormMethod.Get))
+    {
+        <div class="gorm-group">
+            @Html.TextBox("Search", null, new {@class="ofrm-control", @placeholder="Search SSN or Last Name"})
+        </div>
+        <button type="submit" class="btn btn-warning">Submit </button>
+    }
+</div>
 <table class="table">
     <tr>
         <th>
