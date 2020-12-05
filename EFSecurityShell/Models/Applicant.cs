@@ -64,11 +64,11 @@ namespace Team2_AdmissionManagement.Models
         [Range(3.0, 4.0, ErrorMessage = "You do not meet the minimum qualifications.")]
         public decimal GPA { get; set; }
         [Required]
-        [Range(300, 800, ErrorMessage = "Do not meet the minimum qualifications")]
+        [Range(200, 800, ErrorMessage = "Do not meet the minimum qualifications")]
         [Display(Name = "Math SAT")]
         public int MathSAT { get; set; }
         [Required]
-        [Range(300, 800, ErrorMessage = "Do not meet the minimum qualifications")]
+        [Range(200, 800, ErrorMessage = "Do not meet the minimum qualifications")]
         [Display(Name = "Verbal SAT")]
         public int VerbalSAT { get; set; }
         [Display(Name = "Major of Interest")]
