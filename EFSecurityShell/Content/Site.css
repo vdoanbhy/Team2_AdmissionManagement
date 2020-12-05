@@ -1,6 +1,5 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
     height: 100%;
 }
 
@@ -38,7 +37,7 @@ textarea {
 }
 .navbar a{
     color:white;
-    font-size: x-large;
+    font-size: large;
     margin-top: 1.2em;
 }
 .navbar a:visited{
@@ -64,7 +63,7 @@ navbar-brand a:hover{
 /*Body*/
 
 #attention-section{
-    margin-bottom: 3em;
+    margin-bottom: 4em;
     margin-top:5em;
     text-align:center;
 }
@@ -72,22 +71,50 @@ navbar-brand a:hover{
     background-color: #ffcc33;
     color: #006633;
     width: 15em;
+    margin-bottom: 5em;
+    margin-top: 3em;
 }
-#call-to-action a, a:visited, :active:hover {
+#call-to-action a{
     color: #006633;
     font-size:large;
 }
-
-
-    /*Footer*/
-    footer {
-        padding-top: 20px;
-        bottom: 0;
-        width: 100%;
-        min-height: 200px;
-        background-color: black;
-        color: white;
-    }
+#call-to-action a:visited{
+    color: #006633;
+    font-size: large;
+}
+#call-to-action a:hover {
+    color: #006633;
+    font-size: large;
+}
+#whyMason strong {
+    color: #006633;
+}
+#whyMason h2 {
+    color: #ffcc33;
+    text-align: center;
+}
+#tour{
+    text-align:center;
+}
+#tour p{
+    font-size:large;
+}
+#virtualTour {
+    background-color: #ffcc33;
+    color: #006633;
+    width: 15em;
+    margin-bottom: 5em;
+    margin-top: 3em;
+}
+/*Footer*/
+footer {
+    padding-top: 20px;
+    bottom: 0;
+    width: 100%;
+    min-height: 200px;
+    background-color: black;
+    color: white;
+}
 .footer,
 .push {
     height: 50px;

@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Team2_AdmissionManagement.Data;
 using Team2_AdmissionManagement.Models;
+using Team2_AdmissionManagement.ViewModels;
+
 
 namespace Team2_AdmissionManagement.Controllers
 {
@@ -17,9 +19,15 @@ namespace Team2_AdmissionManagement.Controllers
 
         // GET: Applicants
         [Authorize(Roles = "Admin, Staff")]
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            var applicants = db.Applicants.Include(a => a.Interest);
+
+            var applicants = db.Applicants.Include(p => p.Reviews);
+            if (!String.IsNullOrEmpty(search))
+            {
+                applicants = applicants.Where(a=> a.SSN.Contains(search) || a.LastName.Contains(search));
+            }
+            //var applicants = db.Applicants.Include(a => a.Interest);
             return View(applicants.ToList());
         }
 
@@ -53,14 +61,29 @@ namespace Team2_AdmissionManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,SSN,LastName,MiddleName,FirstName,Gender,DoB,Street,City,State,Zip,HomePhone,CellPhone,InstitutionName,InstitutionCity,GraduationDate,GPA,MathSAT,VerbalSAT,InterestID,SubmissionDate")] Applicant applicant)
         {
-            if (ModelState.IsValid) //PUT VALIDATIONS HERE
+            ViewBag.InterestID = new SelectList(db.Interests, "ID", "Major", applicant.InterestID);
+
+            if (ModelState.IsValid)
             {
+                Applicant matchingApplicant = db.Applicants.Where(cm => string.Compare(cm.SSN, applicant.SSN, true) == 0).FirstOrDefault();
+
+                if (applicant == null)
+                {
+                    return HttpNotFound();
+                }
+
+                if (matchingApplicant != null)
+                {
+                    ModelState.AddModelError("SSN", "This SSN was already entered.");
+                    return View(applicant);
+                }
+
                 db.Applicants.Add(applicant);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.InterestID = new SelectList(db.Interests, "ID", "Major", applicant.InterestID);
+            
             return View(applicant);
         }
 
