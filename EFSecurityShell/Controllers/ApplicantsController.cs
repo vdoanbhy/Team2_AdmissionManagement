@@ -53,7 +53,21 @@ namespace Team2_AdmissionManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,SSN,LastName,MiddleName,FirstName,Gender,DoB,Street,City,State,Zip,HomePhone,CellPhone,InstitutionName,InstitutionCity,GraduationDate,GPA,MathSAT,VerbalSAT,InterestID,SubmissionDate")] Applicant applicant)
         {
-            if (ModelState.IsValid) //PUT VALIDATIONS HERE
+            IEnumerable<Applicant> applicants = new List<Applicant>();
+            String[] SSNs = applicants.Select(l => l.SSN).ToArray();
+            string appSSN = applicant.SSN;
+
+            for(int x = 0; x < SSNs.Length; x++)
+            {
+                string currentSSN = SSNs[x];
+                if(appSSN == currentSSN)
+                {
+                    ModelState.AddModelError("SSN", "This SSN has already been entered.");
+                    x = 999999;
+                }
+            }
+
+            if (ModelState.IsValid)
             {
                 db.Applicants.Add(applicant);
                 db.SaveChanges();
